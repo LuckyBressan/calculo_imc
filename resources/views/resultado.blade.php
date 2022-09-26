@@ -8,31 +8,28 @@
   </head>
   <body>
     <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <td scope='col'>Nome</td>
-                    <td scope='col'>Idade</td>
-                    <td scope='col'>Altura</td>
-                    <td scope='col'>Peso</td>
-                    <td scope='col'>IMC</td>
-                    <td scope='col'>Definição</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{$nome}}</td>
-                    <td>{{$idade}}</td>
-                    <td>{{$altura}}</td>
-                    <td>{{$peso}}</td>
-                    <td>{{$imc}}</td>
-                    <td>{{$definicao}}</td>
-                </tr>
-            </tbody>
-        </table> <br><br>
         <div class="mb-3">
             <a href="{{url('/')}}" name="voltar" class="btn btn-primary">Voltar</a>
         </div>
+        <div class="position-relative">
+            <div class="position-absolute top-0 start-0">
+                <img src="{{asset('user.png')}}" width="100" alt=""><br>
+                &nbsp; <h3 style="text-transform:uppercase;" class="text-center">{{$nome}}</h3>
+            </div>
+            <div class="position-absolute top-0 start-50 translate-middle-x">
+                <img src="{{asset('calendario.png')}}" width="100" alt=""><br>
+                &nbsp; <h3 style="text-transform:uppercase;" class="text-center">{{$idade}}</h3>
+            </div>
+            <div class="position-absolute top-0 end-0">
+                <img src="{{asset('altura.png')}}" width="100" alt=""><br>
+                &nbsp; <h3 style="text-transform:uppercase;" class="text-center">{{$altura}}</h3>
+            </div>
+            <div class="position-absolute top-50 start-0 translate-middle-y">
+                <img src="{{asset('peso.png')}}" width="100"><br>
+            </div>
+        </div>
+
+        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   </body>

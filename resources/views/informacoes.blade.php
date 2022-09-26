@@ -8,6 +8,9 @@
   </head>
   <body>
     <div class="container">
+        <div class="text-center">
+         <img src="{{asset('imc.jpg')}}" width="700">
+        </div>
         <form action="{{url('/info')}}" method="get">
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome:</label>

@@ -46,32 +46,21 @@ class CalculoDeIMC extends Model
         
         $imc = $peso/($altura*$altura);
 
-        return $imc;
-    }
-    public function resultado_imc() {
-        $altura = $_GET['altura'];
-        $peso =  $_GET['peso'];
-        
-        $imc = $peso/($altura*$altura);
-
         if($imc<18.5) {
             $definicao = "ABAIXO DO PESO";
-            return $definicao;
         } else if($imc<24.9) {
             $definicao = "PESO NORMAL";
-            return $definicao;
         } else if($imc<29.9) {
             $definicao = "SOBREPESO";
-            return $definicao;
         } else if($imc<34.9) {
             $definicao = "OBDESIDADE GRAU I";
-            return $definicao;
         } else if($imc<39.9) {
             $definicao = "OBDESIDADE GRAU II";
-            return $definicao;
         } else {
             $definicao = "OBDESIDADE GRAU III";
-            return $definicao;
         }
+
+        return ['imc'=>$imc, 'definicao'=>$definicao];
     }
+
 }
