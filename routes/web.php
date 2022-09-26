@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IMCController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [IMCController::class, 'index']);
+Route::get('/info', [IMCController::class, 'info']);
