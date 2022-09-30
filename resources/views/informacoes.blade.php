@@ -29,6 +29,10 @@
                 <input type="number" name="altura" id="altura" class="form-control" step="0.01" required>
             </div>
             <div class="mb-3">
+                <label for="hora_dormida" class="form-label">Média de Horas Dormidas: </label>
+                <input type="number" name="hora_dormida" id="hora_dormida" class="form-control" required>
+            </div>
+            <div class="mb-3">
                 <input type="submit" value="Enviar" name="enviar" class="btn btn-primary">
             </div>
         </form>

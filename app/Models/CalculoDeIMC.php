@@ -10,8 +10,9 @@ class CalculoDeIMC extends Model
     public function nome() {
         return $_GET['nome'];
     }
-    public function idade() {
+    public function idade_e_sono() {
         $idade = 0;
+        $horas = $_GET['hora_dormida'];
 
         $data_nascimento = explode("-",$_GET['nascimento']);
 
@@ -31,14 +32,42 @@ class CalculoDeIMC extends Model
             $idade -=1;
         }
         
+        if($horas<14.5 && $idade<1) {
+            $sono = "Ruim";
+        } else if($horas>14.5 && $idade<1) {
+            $sono = "Boa";
+        } else if($horas<11 && $idade<=2) {
+            $sono = "Ruim";
+        } else if($horas>11 && $idade<=2) {
+            $sono = "Boa";
+        } else if($horas<10 && $idade<=5) {
+            $sono = "Ruim";
+        } else if($horas>10 && $idade<=5) {
+            $sono = "Boa";
+        } else if($horas<9 && $idade<=13) {
+            $sono = "Ruim";
+        } else if($horas>9 && $idade<=13) {
+            $sono = "Boa";
+        } else if($horas<8 && $idade<=17) {
+            $sono = "Ruim";
+        } else if($horas>8 && $idade<=17) {
+            $sono = "Boa";
+        } else if($horas<7 && $idade<=65) {
+            $sono = "Ruim";
+        } else if($horas>7 && $idade<=65) {
+            $sono = "Boa";
+        }
 
-        return $idade;
+        return ['idade'=>$idade, 'sono'=>$sono];
     }
     public function altura() {
         return $_GET['altura'];
     }
     public function peso() {
         return $_GET['peso'];
+    }
+    public function hora_sono() {
+        return $_GET['hora_dormida'];
     }
     public function imc() {
         $altura = $_GET['altura'];
@@ -62,5 +91,4 @@ class CalculoDeIMC extends Model
 
         return ['imc'=>$imc, 'definicao'=>$definicao];
     }
-
 }
